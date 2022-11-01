@@ -27,9 +27,8 @@ RSpec.describe Race do
       race = Race.new("Texas Governor")
       candidate1 = race.register_candidate!({name: "Diana D", party: :democrat})
       candidate2 = race.register_candidate!({name: "Roberto R", party: :republican})
- 
-      expect(race.candidates[0][:name]).to eq("Diana D")
-      expect(race.candidates[1][:name]).to eq("Roberto R")
+      # require 'pry'; binding.pry
+      expect(race.candidates).to eq([candidate1, candidate2])
     end 
   end 
 end 
